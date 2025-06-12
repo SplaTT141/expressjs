@@ -7,9 +7,17 @@
     "dev": "node --watch ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SplaTT141/expressjs.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SplaTT141/expressjs/issues"
+  },
+  "homepage": "https://github.com/SplaTT141/expressjs#readme",
   "description": "",
   "dependencies": {
     "express": "^5.1.0"
