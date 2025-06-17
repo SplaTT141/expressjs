@@ -1,7 +1,9 @@
 export class PageTemplate {
-    constructor() {
+    constructor(req) {
+        this.req = req;
         this.pageType = 'default';
         this.isAsideVisible = true;
+        this.pageJS = '';
     }
 
     head() {
@@ -10,6 +12,13 @@ export class PageTemplate {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
         `;
     }
@@ -17,11 +26,12 @@ export class PageTemplate {
     header() {
         return `
         <header>
-            <img src="#" alt="LOGO">
+            <img src="/img/logo.jpg" alt="LOGO">
             <nav style="display: flex; gap: 2rem; width: 30%; font-size: 2rem; margin-top: 2rem;">
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/register">Register</a>
+                <a href="/services">Services</a>
             </nav>
         </header>
         `;
@@ -30,7 +40,7 @@ export class PageTemplate {
     headerAuth() {
         return `
         <header>
-            <img src="#" alt="LOGO">
+            <img src="/img/logo.jpg" alt="LOGO">
             <nav style="display: flex; gap: 2rem; font-size: 2rem; margin-top: 2rem; background-color:gold;">
                 <a href="/">Home</a>
                 <a href="/register">Register</a>
@@ -74,6 +84,14 @@ export class PageTemplate {
         `;
     }
 
+    script() {
+        if (!this.pageJS) {
+            return '';
+        }
+
+        return `<script src="/js/${this.pageJS}.js" type="module"></script>`;
+    }
+
     render() {
         return `
     <!DOCTYPE html>
@@ -84,6 +102,7 @@ export class PageTemplate {
         ${this.isAsideVisible ? this.aside() : ''}
         <main>${this.main()}</main>
         ${this.pageType === 'default' ? this.footer() : this.footerAuth()}
+        ${this.script()}
       </body>
     </html>
         `

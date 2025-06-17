@@ -1,12 +1,18 @@
 import { PageTemplate } from "../template/PageTemplate.js";
 
 export class PageNotFound extends PageTemplate {
+    constructor(req) {
+        super(req);
+        this.isAsideVisible = false;
+    }
+
     main() {
+        // console.log(this.req.params.error);
+
         return `
-    <div style="text-align: center;">
-        <h1>404</h1>
-        <h4>PAGE NOT FOUND</h4>
-    </div>
-    `;
+            <h1>404</h1>
+            <h2>Page "${this.req.url}" not found</h2>
+            <h2>Page "${this.req.params.error.join('/')}" not found</h2>
+            <a href="/">Back home</a>`;
     }
 }
