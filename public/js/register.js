@@ -8,7 +8,7 @@ formDOM.addEventListener('submit', e => {
     const clientData = {
         username: usernameDOM.value,
         password: passwordDOM.value,
-    }
+    };
 
     fetch('/api/register', {
         method: 'POST',
