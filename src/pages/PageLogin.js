@@ -1,18 +1,18 @@
 import { PageTemplate } from "../template/PageTemplate.js";
 
-export class PageRegister extends PageTemplate {
+export class PageLogin extends PageTemplate {
 
     constructor(req) {
         super(req);
         this.isAsideVisible = false;
-        this.pageJS = 'register';
+        this.pageJS = 'login';
     }
 
     main() {
         return `
     <div class="container">
         <div class="row">
-            <h1 class="register-header">Register page</h1>   
+            <h1 class="register-header">Login page</h1>   
             <div id="success_msg" class="info info-success">SUCCESS</div> 
             <form class="register-form">
                 <div class="form-row">
@@ -26,7 +26,7 @@ export class PageRegister extends PageTemplate {
                     <span id="error_password" class="info info-error">ERROR</span>
                 </div>
                 <div class="form-row">
-                    <button type="submit">Register</button>
+                    <button type="submit">Login</button>
                 </div>
             </form>
         </div>

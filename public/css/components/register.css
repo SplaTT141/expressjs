@@ -1,9 +1,22 @@
-.form {
+.register-form {
   padding-top: 2rem;
-  background-color: rgb(229, 231, 165);
+  background-color: rgb(254, 193, 136);
   width: 30%;
   margin: auto;
   border: 0.5px solid;
+  padding: 1rem;
+}
+.register-form button {
+  display: flex;
+  border-radius: 10px;
+  background-color: rgb(67, 76, 85);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+.register-form button:hover {
+  background-color: #fff;
+  color: rgb(67, 76, 85);
 }
 
 .register-header {
@@ -24,4 +37,29 @@
   height: 4rem;
   padding: 1rem;
   font-size: 2rem;
+}
+
+.info {
+  display: none;
+}
+
+.info.info-success.info-show {
+  display: flex;
+  justify-content: center;
+  color: rgb(160, 245, 33);
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.info.info-error.info-show {
+  display: flex;
+  color: red;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0.2rem;
+  padding-left: 0.2rem;
+  border: 1px solid red;
+  border-radius: 20px;
+  margin-top: 0.5rem;
 }
