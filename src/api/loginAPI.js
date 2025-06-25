@@ -46,6 +46,6 @@ export function loginAPI(req, res) {
         })
         .json({
             status: 'success',
-            msg: 'Sekmingai prisijungei!',
+            msg: 'Sekmingai prisijungei!!',
         });
 }
